@@ -1,7 +1,7 @@
 SystemJS.config({
   paths: {
-    "npm:": "jspm_packages/npm/",
-    "github:": "jspm_packages/github/",
+    "npm:": "./jspm_packages/npm/",
+    "github:": "./jspm_packages/github/",
     "skeleton/": "src/"
   },
   browserConfig: {
