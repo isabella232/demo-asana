@@ -1,0 +1,116 @@
+{
+  "main": "dist/vue.runtime.common.js",
+  "format": "cjs",
+  "meta": {
+    "*": {
+      "globals": {
+        "process": "process"
+      }
+    },
+    "*.json": {
+      "format": "json"
+    },
+    "src/compiler/directives/index.js": {
+      "format": "esm"
+    },
+    "src/compiler/parser/html-parser.js": {
+      "format": "esm"
+    },
+    "src/core/components/index.js": {
+      "format": "esm"
+    },
+    "src/core/index.js": {
+      "format": "esm"
+    },
+    "src/core/instance/index.js": {
+      "format": "esm"
+    },
+    "src/core/instance/proxy.js": {
+      "format": "esm"
+    },
+    "src/core/observer/array.js": {
+      "format": "esm"
+    },
+    "src/core/util/debug.js": {
+      "format": "esm"
+    },
+    "src/core/util/index.js": {
+      "format": "esm"
+    },
+    "src/core/vdom/modules/index.js": {
+      "format": "esm"
+    },
+    "src/core/vdom/patch.js": {
+      "format": "esm"
+    },
+    "src/entries/weex-framework.js": {
+      "format": "esm"
+    },
+    "src/platforms/web/compiler/directives/index.js": {
+      "format": "esm"
+    },
+    "src/platforms/web/compiler/modules/index.js": {
+      "format": "esm"
+    },
+    "src/platforms/web/compiler/util.js": {
+      "format": "esm"
+    },
+    "src/platforms/web/runtime/components/index.js": {
+      "format": "esm"
+    },
+    "src/platforms/web/runtime/directives/index.js": {
+      "format": "esm"
+    },
+    "src/platforms/web/runtime/directives/model.js": {
+      "format": "esm"
+    },
+    "src/platforms/web/runtime/modules/index.js": {
+      "format": "esm"
+    },
+    "src/platforms/web/server/directives/index.js": {
+      "format": "esm"
+    },
+    "src/platforms/web/server/modules/index.js": {
+      "format": "esm"
+    },
+    "src/platforms/weex/compiler/directives/index.js": {
+      "format": "esm"
+    },
+    "src/platforms/weex/compiler/modules/index.js": {
+      "format": "esm"
+    },
+    "src/platforms/weex/runtime/config.js": {
+      "format": "esm"
+    },
+    "src/platforms/weex/runtime/directives/*": {
+      "format": "esm"
+    },
+    "src/platforms/weex/runtime/modules/index.js": {
+      "format": "esm"
+    },
+    "src/platforms/weex/runtime/node-ops.js": {
+      "format": "esm"
+    },
+    "src/platforms/weex/util/*": {
+      "format": "esm"
+    },
+    "src/server/create-bundle-renderer.js": {
+      "format": "esm"
+    },
+    "src/server/run-in-vm.js": {
+      "format": "esm"
+    }
+  },
+  "map": {
+    "./src/compiler": "./src/compiler/index.js",
+    "./src/compiler/codegen": "./src/compiler/codegen/index.js",
+    "./src/compiler/parser": "./src/compiler/parser/index.js",
+    "./src/core/global-api": "./src/core/global-api/index.js",
+    "./src/core/observer": "./src/core/observer/index.js",
+    "./src/core/vdom/helpers": "./src/core/vdom/helpers/index.js",
+    "./src/platforms/web/compiler": "./src/platforms/web/compiler/index.js",
+    "./src/platforms/web/util": "./src/platforms/web/util/index.js",
+    "./src/platforms/weex/compiler": "./src/platforms/weex/compiler/index.js",
+    "./src/platforms/weex/runtime": "./src/platforms/weex/runtime/index.js"
+  }
+}

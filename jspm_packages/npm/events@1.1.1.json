@@ -1,0 +1,12 @@
+{
+  "main": "events.js",
+  "format": "cjs",
+  "meta": {
+    "*.json": {
+      "format": "json"
+    }
+  },
+  "map": {
+    "./tests": "./tests/index.js"
+  }
+}

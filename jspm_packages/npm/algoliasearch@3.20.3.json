@@ -1,0 +1,47 @@
+{
+  "main": "index.js",
+  "format": "cjs",
+  "meta": {
+    "*": {
+      "globals": {
+        "process": "process"
+      }
+    },
+    "*.json": {
+      "format": "json"
+    },
+    "dist/algoliasearch.angular.js": {
+      "cjsRequireDetection": false
+    },
+    "dist/algoliasearch.angular.min.js": {
+      "format": "amd"
+    },
+    "dist/algoliasearch.jquery.js": {
+      "cjsRequireDetection": false
+    },
+    "dist/algoliasearch.jquery.min.js": {
+      "format": "amd"
+    },
+    "dist/algoliasearch.js": {
+      "cjsRequireDetection": false
+    },
+    "dist/algoliasearchLite.js": {
+      "cjsRequireDetection": false
+    },
+    "src/server/builds/node.js": {
+      "globals": {
+        "Buffer": "buffer/global"
+      }
+    }
+  },
+  "map": {
+    "./index.js": {
+      "browser": "./src/browser/builds/algoliasearch.js"
+    },
+    "./lite.js": {
+      "browser": "./src/browser/builds/algoliasearchLite.js"
+    },
+    "./test/parse": "./test/parse/index.js",
+    "./test/support-server": "./test/support-server/index.js"
+  }
+}

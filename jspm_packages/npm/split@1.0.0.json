@@ -1,0 +1,19 @@
+{
+  "main": "index.js",
+  "format": "cjs",
+  "meta": {
+    "*": {
+      "globals": {
+        "process": "process"
+      }
+    },
+    "*.json": {
+      "format": "json"
+    },
+    "test/partitioned_unicode.js": {
+      "globals": {
+        "Buffer": "buffer/global"
+      }
+    }
+  }
+}

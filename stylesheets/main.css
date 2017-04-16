@@ -1,0 +1,73 @@
+[v-cloak] {
+  opacity: 0; }
+  .header-name [v-cloak] {
+    display: none; }
+
+.dropdown {
+  display: none; }
+  .dropdown.visible {
+    display: block; }
+
+.dropdown .typeahead-dropdown-contents .item:hover,
+.dropdown .action:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #1AAFD0;
+  text-decoration: none; }
+  .dropdown .typeahead-dropdown-contents .item:hover .typeahead-icon,
+  .dropdown .typeahead-dropdown-contents .item:hover .search-row-icon,
+  .dropdown .action:hover .typeahead-icon,
+  .dropdown .action:hover .search-row-icon {
+    color: #E8F7FB;
+    fill: #E8F7FB; }
+  .dropdown .typeahead-dropdown-contents .item:hover .metadata,
+  .dropdown .action:hover .metadata {
+    color: #E8F7FB; }
+  .dropdown .typeahead-dropdown-contents .item:hover .advanced-search-footer,
+  .dropdown .action:hover .advanced-search-footer {
+    color: #80E6FF; }
+  .dropdown .typeahead-dropdown-contents .item:hover .advanced-search-footer-text,
+  .dropdown .typeahead-dropdown-contents .item:hover .completed,
+  .dropdown .typeahead-dropdown-contents .item:hover .toggle-bellow-search-row.search-row .search-row-icon,
+  .dropdown .typeahead-dropdown-contents .item:hover .toggle-bellow-search-row.search-row .search-row-contents,
+  .dropdown .action:hover .advanced-search-footer-text,
+  .dropdown .action:hover .completed,
+  .dropdown .action:hover .toggle-bellow-search-row.search-row .search-row-icon,
+  .dropdown .action:hover .toggle-bellow-search-row.search-row .search-row-contents {
+    color: #fff;
+    fill: #fff; }
+  .dropdown .typeahead-dropdown-contents .item:hover .toggle-bellow-search-row.search-row,
+  .dropdown .action:hover .toggle-bellow-search-row.search-row {
+    background-color: #1AAFD0; }
+
+.item-label em {
+  font-weight: bold;
+  font-style: normal; }
+
+.react-mount-node .Avatar--medium {
+  text-transform: uppercase; }
+
+.accordion-bellow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse; }
+  .accordion-bellow input[type=checkbox] {
+    opacity: 0;
+    height: 0;
+    width: 0; }
+    .accordion-bellow input[type=checkbox]:checked + label {
+      display: none; }
+    .accordion-bellow input[type=checkbox]:checked ~ .accordion-bellow-contents {
+      max-height: 510px !important; }
+
+.grid-cell .completed {
+  color: #B9BCC0 !important; }
+
+.component-attribute {
+  color: #000; }
+
+/*# sourceMappingURL=main.css.map */

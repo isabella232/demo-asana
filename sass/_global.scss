@@ -1,0 +1,75 @@
+// ------------- GLOBAL OVERRIDES ------------- //
+
+[v-cloak] { 
+    opacity: 0;
+    .header-name & {
+        display: none;
+    }
+}
+
+.dropdown {
+    display: none;
+    &.visible {
+        display: block;
+    }
+}
+
+.dropdown .typeahead-dropdown-contents .item:hover,
+.dropdown .action:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #1AAFD0;
+    text-decoration: none;
+    .typeahead-icon,
+    .search-row-icon {
+        color: #E8F7FB;
+        fill: #E8F7FB;
+    }
+    .metadata {
+        color: #E8F7FB;
+    }
+    .advanced-search-footer {
+        color: #80E6FF;
+    }
+    .advanced-search-footer-text,
+    .completed,
+    .toggle-bellow-search-row.search-row .search-row-icon,
+    .toggle-bellow-search-row.search-row .search-row-contents{
+        color: #fff;
+        fill: #fff;
+    }
+    .toggle-bellow-search-row.search-row {
+            background-color: #1AAFD0;
+    }
+}
+
+.item-label em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.react-mount-node .Avatar--medium {
+    text-transform: uppercase;
+}
+
+.accordion-bellow {
+    display: flex;
+    flex-direction: column-reverse;
+    input[type=checkbox] {
+        opacity: 0;
+        height: 0;
+        width: 0;
+        &:checked {
+            + label {
+                display: none;
+            }
+            ~ .accordion-bellow-contents {
+                max-height: 510px!important;
+            }
+        }
+    }
+}
+
+.grid-cell .completed {
+    color: #B9BCC0!important;
+}
