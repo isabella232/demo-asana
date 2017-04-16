@@ -5,7 +5,7 @@ SystemJS.config({
     "skeleton/": "src/"
   },
   browserConfig: {
-    "baseURL": "/"
+    "baseURL": "./"
   },
   devConfig: {
     "map": {
