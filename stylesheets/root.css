@@ -1288,7 +1288,7 @@ table {
 @font-face {
     font-family: 'icon';
     src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/d0739855e48e75679ebf11c782cd49005429d604/asana-icon-font.eot');
-    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/d0739855e48e75679ebf11c782cd49005429d604/asana-icon-font.eot#iefix') format('embedded-opentype'), url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/68fe259693c263f7f0e1fca02f512802d9d5a60f/asana-icon-font.svg#icon') format('svg'), url('/fonts/asana-icon-font.woff') format('woff'), url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/174fbd4a682e82e9f9ba0a867e0dc0d25498f9f4/asana-icon-font.ttf') format('truetype');
+    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/d0739855e48e75679ebf11c782cd49005429d604/asana-icon-font.eot#iefix') format('embedded-opentype'), url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/68fe259693c263f7f0e1fca02f512802d9d5a60f/asana-icon-font.svg#icon') format('svg'), url('../fonts/asana-icon-font.woff') format('woff'), url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/174fbd4a682e82e9f9ba0a867e0dc0d25498f9f4/asana-icon-font.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -41724,70 +41724,70 @@ input[type="file"].hidden-file-input {
 @font-face {
     font-family: 'proxima-nova';
     src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/bb74ad96852359f6dc90ebfc50d469dd8049f758/ProximaNova-ThinWeb.eot');
-    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/bb74ad96852359f6dc90ebfc50d469dd8049f758/ProximaNova-ThinWeb.eot#iefix') format('embedded-opentype'), url('/fonts/ProximaNova-ThinWeb.woff') format('woff');
+    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/bb74ad96852359f6dc90ebfc50d469dd8049f758/ProximaNova-ThinWeb.eot#iefix') format('embedded-opentype'), url('../fonts/ProximaNova-ThinWeb.woff') format('woff');
     font-weight: 200;
 }
 
 @font-face {
     font-family: 'proxima-nova';
     src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/dd7728e9457a4fb3ca5cb820ea67ae686fc031fd/ProximaNova-LightWeb.eot');
-    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/dd7728e9457a4fb3ca5cb820ea67ae686fc031fd/ProximaNova-LightWeb.eot#iefix') format('embedded-opentype'), url('/fonts/ProximaNova-LightWeb.woff') format('woff');
+    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/dd7728e9457a4fb3ca5cb820ea67ae686fc031fd/ProximaNova-LightWeb.eot#iefix') format('embedded-opentype'), url('../fonts/ProximaNova-LightWeb.woff') format('woff');
     font-weight: 300;
 }
 
 @font-face {
     font-family: 'proxima-nova';
     src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/57b041eaff7dcecdb2b0aba9bf46adad6b2dc173/ProximaNova-RegWeb.eot');
-    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/57b041eaff7dcecdb2b0aba9bf46adad6b2dc173/ProximaNova-RegWeb.eot#iefix') format('embedded-opentype'), url('/fonts/ProximaNova-RegWeb.woff') format('woff');
+    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/57b041eaff7dcecdb2b0aba9bf46adad6b2dc173/ProximaNova-RegWeb.eot#iefix') format('embedded-opentype'), url('../fonts/ProximaNova-RegWeb.woff') format('woff');
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'proxima-nova';
     src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/d9012e698d8b8bcfa45ce52e6ea3a325cac5a716/ProximaNova-SboldWeb.eot');
-    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/d9012e698d8b8bcfa45ce52e6ea3a325cac5a716/ProximaNova-SboldWeb.eot#iefix') format('embedded-opentype'), url('/fonts/ProximaNova-SboldWeb.woff') format('woff');
+    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/d9012e698d8b8bcfa45ce52e6ea3a325cac5a716/ProximaNova-SboldWeb.eot#iefix') format('embedded-opentype'), url('../fonts/ProximaNova-SboldWeb.woff') format('woff');
     font-weight: 600;
 }
 
 @font-face {
     font-family: 'proxima-nova';
     src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/b13d8032a1de59a2748bc1b4c20124916574ae7a/ProximaNova-BoldWeb.eot');
-    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/b13d8032a1de59a2748bc1b4c20124916574ae7a/ProximaNova-BoldWeb.eot#iefix') format('embedded-opentype'), url('/fonts/ProximaNova-BoldWeb.woff') format('woff');
+    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/b13d8032a1de59a2748bc1b4c20124916574ae7a/ProximaNova-BoldWeb.eot#iefix') format('embedded-opentype'), url('../fonts/ProximaNova-BoldWeb.woff') format('woff');
     font-weight: 700;
 }
 
 @font-face {
     font-family: 'proxima-nova';
     src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/cd6da7d4134c513f8b22a5a6b8449371ed4228b6/ProximaNova-XboldWeb.eot');
-    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/cd6da7d4134c513f8b22a5a6b8449371ed4228b6/ProximaNova-XboldWeb.eot#iefix') format('embedded-opentype'), url('/fonts/ProximaNova-XboldWeb.woff') format('woff');
+    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/cd6da7d4134c513f8b22a5a6b8449371ed4228b6/ProximaNova-XboldWeb.eot#iefix') format('embedded-opentype'), url('../fonts/ProximaNova-XboldWeb.woff') format('woff');
     font-weight: 800;
 }
 
 @font-face {
     font-family: 'proxima-nova-cond';
     src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/3284b69aec7641498c5188749e0de147e834043e/ProximaNovaCond-RegWeb.eot');
-    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/3284b69aec7641498c5188749e0de147e834043e/ProximaNovaCond-RegWeb.eot#iefix') format('embedded-opentype'), url('/fonts/ProximaNovaCond-RegWeb.woff') format('woff');
+    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/3284b69aec7641498c5188749e0de147e834043e/ProximaNovaCond-RegWeb.eot#iefix') format('embedded-opentype'), url('../fonts/ProximaNovaCond-RegWeb.woff') format('woff');
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'proxima-nova-cond';
     src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/80a20cb525b5816dcaa31a78af2b8299ffc8386e/ProximaNovaCond-SboldWeb.eot');
-    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/80a20cb525b5816dcaa31a78af2b8299ffc8386e/ProximaNovaCond-SboldWeb.eot#iefix') format('embedded-opentype'), url('/fonts/ProximaNovaCond-SboldWeb.woff') format('woff');
+    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/80a20cb525b5816dcaa31a78af2b8299ffc8386e/ProximaNovaCond-SboldWeb.eot#iefix') format('embedded-opentype'), url('../fonts/ProximaNovaCond-SboldWeb.woff') format('woff');
     font-weight: 600;
 }
 
 @font-face {
     font-family: 'proxima-nova-cond';
     src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/e81b57f6d25d7bbfa96591023f3a63e8f44b4abb/ProximaNovaCond-BoldWeb.eot');
-    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/e81b57f6d25d7bbfa96591023f3a63e8f44b4abb/ProximaNovaCond-BoldWeb.eot#iefix') format('embedded-opentype'), url('/fonts/ProximaNovaCond-BoldWeb.woff') format('woff');
+    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/e81b57f6d25d7bbfa96591023f3a63e8f44b4abb/ProximaNovaCond-BoldWeb.eot#iefix') format('embedded-opentype'), url('../fonts/ProximaNovaCond-BoldWeb.woff') format('woff');
     font-weight: 700;
 }
 
 @font-face {
     font-family: 'haptik';
     src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/713fa3a195f429093a8d49ed3bf4e8e028527eb0/GT-Haptik-Regular.eot');
-    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/713fa3a195f429093a8d49ed3bf4e8e028527eb0/GT-Haptik-Regular.eot#iefix') format('embedded-opentype'), url('/fonts/GT-Haptik-Regular.woff') format('woff');
+    src: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/713fa3a195f429093a8d49ed3bf4e8e028527eb0/GT-Haptik-Regular.eot#iefix') format('embedded-opentype'), url('../fonts/GT-Haptik-Regular.woff') format('woff');
     font-weight: 400;
 }
 
