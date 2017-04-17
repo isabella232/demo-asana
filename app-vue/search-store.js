@@ -100,7 +100,7 @@ export const store = {
         try {
             const results = await fullIndex.search(this.state.fullQuery, {
                 hitsPerPage: 25,
-                optionalFacetFilters: ["assignee:" + this.state.activePerso + "<score=2>", "followers_du:" + this.state.activePerso + "<score=1>"]
+                optionalFacetFilters: ["assignee:" + this.state.activePerso + "<score=3>", "followers_du:" + this.state.activePerso + "<score=1>", "creator_du:" + this.state.activePerso + "<score=2>"]
             });
             return this.state.fullResults = results.hits;
         } catch (err) {
