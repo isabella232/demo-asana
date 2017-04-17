@@ -44,25 +44,29 @@ export const store = {
             indexName: 'asanaUsers',
             query: this.state.query,
             params: {
-                hitsPerPage: 8
+                hitsPerPage: 8,
+                optionalFacetFilters: ["followers_du:" + this.state.activePerso]
             }
         }, {
             indexName: 'asanaProjects',
             query: this.state.query,
             params: {
-                hitsPerPage: 8
+                hitsPerPage: 8,
+                optionalFacetFilters: ["followers_du:" + this.state.activePerso]
             }
         }, {
             indexName: 'asanaTasks',
             query: this.state.query,
             params: {
-                hitsPerPage: 8
+                hitsPerPage: 8,
+                optionalFacetFilters: ["assignee:" + this.state.activePerso + "<score=3>", "followers_du:" + this.state.activePerso + "<score=1>", "creator_du:" + this.state.activePerso + "<score=2>"]
             }
         }, {
             indexName: 'asanaTags',
             query: this.state.query,
             params: {
-                hitsPerPage: 8
+                hitsPerPage: 8,
+                optionalFacetFilters: ["followers_du:" + this.state.activePerso]
             }
         }, {
             indexName: 'asanaTeams',
