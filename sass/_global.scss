@@ -1,6 +1,5 @@
 // ------------- GLOBAL OVERRIDES ------------- //
-
-[v-cloak] { 
+[v-cloak] {
     opacity: 0;
     .header-name & {
         display: none;
@@ -34,12 +33,12 @@
     .advanced-search-footer-text,
     .completed,
     .toggle-bellow-search-row.search-row .search-row-icon,
-    .toggle-bellow-search-row.search-row .search-row-contents{
+    .toggle-bellow-search-row.search-row .search-row-contents {
         color: #fff;
         fill: #fff;
     }
     .toggle-bellow-search-row.search-row {
-            background-color: #1AAFD0;
+        background-color: #1AAFD0;
     }
 }
 
@@ -72,4 +71,40 @@
 
 .grid-cell .completed {
     color: #B9BCC0!important;
+}
+
+.personify-user {
+    &-initials {
+        color: #fff;
+        font-size: 12px;
+        margin-top: 1px;
+        &:hover {
+            border: 0;
+            text-decoration: none;
+        }
+    }
+    .dropdown-anchor.omnibutton {
+        margin-right: 10px;
+        margin-left: -5px;
+    }
+    .topbarHelpMenuButton-textButton {
+        margin-right: 0;
+        &:hover + .dropdown-anchor.omnibutton .omnibutton-button:after {
+            height: 32px;
+            width: 32px;
+        }
+    }
+    .omnibutton-button:hover {
+        text-decoration: none!important;
+    }
+}
+
+.topbar-accountInfo {
+    position: relative;
+}
+
+.dropdown-personify {
+    top: 38px;
+    position: absolute!important;
+    right: 20px;
 }

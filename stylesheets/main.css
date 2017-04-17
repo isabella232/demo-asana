@@ -67,6 +67,35 @@
 .grid-cell .completed {
   color: #B9BCC0 !important; }
 
+.personify-user-initials {
+  color: #fff;
+  font-size: 12px;
+  margin-top: 1px; }
+  .personify-user-initials:hover {
+    border: 0;
+    text-decoration: none; }
+
+.personify-user .dropdown-anchor.omnibutton {
+  margin-right: 10px;
+  margin-left: -5px; }
+
+.personify-user .topbarHelpMenuButton-textButton {
+  margin-right: 0; }
+  .personify-user .topbarHelpMenuButton-textButton:hover + .dropdown-anchor.omnibutton .omnibutton-button:after {
+    height: 32px;
+    width: 32px; }
+
+.personify-user .omnibutton-button:hover {
+  text-decoration: none !important; }
+
+.topbar-accountInfo {
+  position: relative; }
+
+.dropdown-personify {
+  top: 38px;
+  position: absolute !important;
+  right: 20px; }
+
 .component-attribute {
   color: #000; }
 

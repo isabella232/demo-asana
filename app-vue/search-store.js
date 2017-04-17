@@ -8,10 +8,26 @@ export const config = {
 export const client = algoliasearch(config.APP_ID, config.API_KEY);
 export const fullIndex = client.initIndex('asanaTasksAndConversations');
 
+export const persoUsers = [
+    {
+        name: "Kat Mooney",
+        id: 8075699117009
+    },
+    {
+        name: "Tatiana Klima",
+        id: 8075908659758
+    },
+    {
+        name: "Alejandro Luna",
+        id: 8090585293258
+    }
+];
+
 export const store = {
     state: {
         query: '',
         fullQuery: '',
+        activePerso: 0,
         userResults: [],
         projectResults: [],
         taskResults: [],
@@ -68,12 +84,21 @@ export const store = {
         store.state.tagResults = content.results[3].hits;
         store.state.teamResults = content.results[4].hits;
     },
-    performFullSearch() {
+    async performFullSearch() {
         this.state.fullQuery = this.state.query;
         this.state.query = "";
-        fullIndex.search(this.state.fullQuery, {hitsPerPage: 25}).then(
-            (results) => {
-                this.state.fullResults = results.hits;
-            }).catch(err => console.log(err));
+        try {
+            const results = await fullIndex.search(this.state.fullQuery, {
+                hitsPerPage: 25,
+                optionalFacetFilters: ["assignee:" + this.state.activePerso + "<score=2>", "followers_du:" + this.state.activePerso + "<score=1>"]
+            });
+            return this.state.fullResults = results.hits;
+        } catch (err) {
+            console.log(err);
+        }
+    },
+    updatePerso(id) {
+        this.state.activePerso = id;
+        this.performFullSearch();
     }
 }

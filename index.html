@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>eAlgolia Asana Demo</title>
+    <title>Algolia Asana Demo</title>
     <link rel="shortcut icon" href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/8897db9ac54fb68c74f76b4d3e2e753b524fca42/Favicon@3x.png">
     <meta name="msapplication-TileColor" content="#114D97">
     <link type="text/css" rel="stylesheet" href="stylesheets/root.css">
@@ -336,26 +336,10 @@
                                                                 </svg>
                                                             </a>
                                                         </div><a class="NavigationLink topbar-myTasksButton is-selected" href="https://app.asana.com/0/178094490309752/178094490309752">My Tasks</a><a class="NavigationLink topbar-notificationsButton has-newNotifications" href="https://app.asana.com/0/inbox/178094490309751">Inbox</a><a class="NavigationLink topbar-myDashboardButton" href="https://app.asana.com/0/dashboard/178094490309751">Dashboard</a>
-                                                        <div class="dropdown-anchor omnibutton">
-                                                            <a class="omnibutton-button">
-                                                                <svg class="icon PlusIcon omnibutton-plusIcon" title="PlusIcon" viewBox="0 0 32 32">
-                                                                    <polygon points="28,14 18,14 18,4 14,4 14,14 4,14 4,18 14,18 14,28 18,28 18,18 28,18"></polygon>
-                                                                </svg>
-                                                            </a>
-                                                            <noscript></noscript>
-                                                            <noscript></noscript>
-                                                        </div>
                                                         <!-- react-text: 17 -->
                                                         <!-- /react-text -->
-                                                        <div class="topbar-accountInfo">
-                                                            <div class="topbarHelpMenuButton topbarHelpMenuButton-textButton">
-                                                                <!-- react-text: 20 -->Help
-                                                                <!-- /react-text -->
-                                                                <svg class="icon DownIcon topbarHelpMenuButton-textButtonDownIcon" title="DownIcon" viewBox="0 0 32 32">
-                                                                    <path d="M4.686,12.686l9.899,9.9c0.781,0.781,2.047,0.781,2.828,0l9.9-9.9l-2.475-2.475L16,19.05l-8.839-8.839L4.686,12.686z"></path>
-                                                                </svg>
-                                                            </div>
-                                                            <!-- react-empty: 23 --><a class="topbar-settingsMenuButton"><span class="topbar-settingsMenuDomainName"><span>algolia.com</span></span><div class="Avatar Avatar--medium Avatar--color4 topbar-settingsMenuAvatar" style="background-image: url(&quot;https://s3.amazonaws.com/profile_photos/178094490309747.HTDga4449Myxw7fupUAI_60x60.png&quot;);"><!-- react-text: 28 --><!-- /react-text --></div></a></div>
+                                                        <personify-user :users="persoUsers" :activeid="local.activePerso"></personify-user>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -363,8 +347,7 @@
                                                 <div class="search-field-buffer search-field-buffer-left search-field-buffer-with-dashboard search-field-buffer-nav-open"></div>
                                                 <svg class="svgIcon search-field-icon" viewBox="0 0 32 32" title="">
                                                     <path d="M29.707,28.293l-8.256-8.256C23.042,18.13,24,15.677,24,13c0-6.075-4.925-11-11-11S2,6.925,2,13s4.925,11,11,11c2.677,0,5.13-0.958,7.037-2.549l8.256,8.256L29.707,28.293z M4,13c0-4.963,4.037-9,9-9c4.963,0,9,4.037,9,9s-4.037,9-9,9C8.037,22,4,17.963,4,13z"></path>
-                                                </svg><span class="typeahead multi-sectioned">
-<!--                                            <component-example :message="local.message"></component-example>-->
+                                                </svg><span class="typeahead multi-sectioned">                                   
                                             <input v-bind:value="local.query"
   v-on:input="store.updateQuery($event.target.value)" v-on:keyup="$event.keyCode == 13 && store.performFullSearch()" autocomplete="off" rows="1" id="nav_search_input" tabindex="0" class="generic-input filter-input showing search-box" type="text" placeholder="Search">
                                             </span>
@@ -646,10 +629,14 @@
                                                                                 <div class="circularButtonView circularToggleButtonView-button circularButtonView--xsmall circularButtonView--onWhiteBackground circularButtonView--active"><span class="circularButtonView-label"><svg class="svgIcon " viewBox="0 0 32 32" title="checkmark"><polygon points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615 "></polygon></svg></span></div>
                                                                         </div>
                                                                         </td>
-                                                                        <td v-if="result.__type === 'Conversation'" class="grid-cell grid_cell_boolean" id="conversation_action"><svg class="svgIcon conversationRowView-conversationIcon" viewBox="0 0 32 32" title="conversation icon"><path d="M19,2c6.065,0,11,4.935,11,11s-4.935,11-11,11h-5.19L8,28.126v-5.282l-0.919-0.59C3.899,20.211,2,16.751,2,13C2,6.935,6.935,2,13,2H19 M19,0h-6C5.832,0,0,5.832,0,13c0,4.59,2.398,8.623,6,10.937V32l8.448-6H19c7.168,0,13-5.832,13-13S26.168,0,19,0L19,0z"></path></svg></td>
+                                                                        <td v-if="result.__type === 'Conversation'" class="grid-cell grid_cell_boolean" id="conversation_action">
+                                                                            <svg class="svgIcon conversationRowView-conversationIcon" viewBox="0 0 32 32" title="conversation icon">
+                                                                                <path d="M19,2c6.065,0,11,4.935,11,11s-4.935,11-11,11h-5.19L8,28.126v-5.282l-0.919-0.59C3.899,20.211,2,16.751,2,13C2,6.935,6.935,2,13,2H19 M19,0h-6C5.832,0,0,5.832,0,13c0,4.59,2.398,8.623,6,10.937V32l8.448-6H19c7.168,0,13-5.832,13-13S26.168,0,19,0L19,0z"></path>
+                                                                            </svg>
+                                                                        </td>
                                                                         <td class="grid-cell grid_cell_string non_insert_mode">
                                                                             <div class="gridCell-stringContainer">
-                                                                                <textarea v-bind:class="{'completed': result.isCompleted}" id="SearchSelection.319301085880483_row__main_input__SPECIAL_GROUP_NULL_176396194548780" class="task-row-text-input override-focus-border  override-hover-border notranslate grid-inherited-subtask-0" rows="1" tabindex="-1" onfocus="undefined">{{result.name}}</textarea>
+                                                                                <textarea v-bind:class="{'completed': result.isCompleted}" id="SearchSelection.319301085880483_row__main_input__SPECIAL_GROUP_NULL_176396194548780" class="task-row-text-input override-focus-border  override-hover-border notranslate grid-inherited-subtask-0" rows="1" tabindex="-1" onfocus="undefined">{{result.name}}{{result.description ? ' ‹ ' + result.description : ""}}</textarea>
                                                                             </div>
                                                                         </td>
                                                                         <td class="grid-cell grid_cell_assignee">
@@ -673,52 +660,52 @@
                                                                     </span>
                                                                     </td>
                                                                     </tr>
-                                                            
-    </tbody>
-    </table>
-    </div>
-    </div>
-    </p>
-    </span>
-    </div>
-    <noscript></noscript>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div id="right_pane_container" class="">
-        <div id="right_pane" class="details-pane-redesign">
-            <div class="navigating-overlay hidden">
-                <div class="navigating-overlay-mask"></div>
-                <div class="navigating-overlay-box">
-                    <div class="loadingIndicator">
-                        <div class="loadingIndicator-rotator">
-                            <div class="loadingIndicator-dot"></div>
+
+                                                                    </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            </p>
+                                                            </span>
+                                                        </div>
+                                                        <noscript></noscript>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="right_pane_container" class="">
+                                <div id="right_pane" class="details-pane-redesign">
+                                    <div class="navigating-overlay hidden">
+                                        <div class="navigating-overlay-mask"></div>
+                                        <div class="navigating-overlay-box">
+                                            <div class="loadingIndicator">
+                                                <div class="loadingIndicator-rotator">
+                                                    <div class="loadingIndicator-dot"></div>
+                                                </div>
+                                                <div class="loader-text"></div>
+                                            </div>
+                                        </div>
+                                    </div><span><div id="details_pane_header" class="details-pane-redesign details-pane-header "><div class="toolbar details-pane-top details-pane-toolbar  toolbar-no-grad"><div class="gutter-left"></div><span class="toolbar-section left"></span><span class="toolbar-spacer"></span><span class="toolbar-section right"><div class="closeDetailsPaneX borderless-button"><svg class="svgIcon " viewBox="0 0 32 32" title="closex"><polygon points="24.485,27.314 27.314,24.485 18.828,16 27.314,7.515 24.485,4.686 16,13.172 7.515,4.686 4.686,7.515 13.172,16 4.686,24.485 7.515,27.314 16,18.828 "></polygon></svg></div></span>
+                                    <div class="gutter-right"></div>
+                                </div>
+                            </div>
+                            <div class="nothing-selected">
+                                <div class="nothing-selected-text">Select an item to view its details.</div>
+                            </div>
+                            </span>
+                            <div class="columnView-leftGutter"></div>
+                            <div id="right_pane__contents" class="column-contents2 details-pane-redesign">
+                                <div class="column-contents-on-click-below-content"><span></span></div>
+                            </div>
                         </div>
-                        <div class="loader-text"></div>
                     </div>
+                    <div class="asanaView-paneGutter"></div>
                 </div>
-            </div><span><div id="details_pane_header" class="details-pane-redesign details-pane-header "><div class="toolbar details-pane-top details-pane-toolbar  toolbar-no-grad"><div class="gutter-left"></div><span class="toolbar-section left"></span><span class="toolbar-spacer"></span><span class="toolbar-section right"><div class="closeDetailsPaneX borderless-button"><svg class="svgIcon " viewBox="0 0 32 32" title="closex"><polygon points="24.485,27.314 27.314,24.485 18.828,16 27.314,7.515 24.485,4.686 16,13.172 7.515,4.686 4.686,7.515 13.172,16 4.686,24.485 7.515,27.314 16,18.828 "></polygon></svg></div></span>
-            <div class="gutter-right"></div>
+            </div>
         </div>
-    </div>
-    <div class="nothing-selected">
-        <div class="nothing-selected-text">Select an item to view its details.</div>
-    </div>
-    </span>
-    <div class="columnView-leftGutter"></div>
-    <div id="right_pane__contents" class="column-contents2 details-pane-redesign">
-        <div class="column-contents-on-click-below-content"><span></span></div>
-    </div>
-    </div>
-    </div>
-    <div class="asanaView-paneGutter"></div>
-    </div>
-    </div>
-    </div>
     </div>
     </div>
     </div>

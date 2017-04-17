@@ -1,17 +1,18 @@
 import Vue from 'vue/dist/vue.common.js';
 import * as SearchStore from './search-store.js';
-import * as ComponentExample from './components/component-example.js';
+import * as PersonifyUser from './components/personify-user.js';
 
 var app = new Vue({
     el: '#AlgoliaSearch',
     data: {
         local: SearchStore.store.state,
-        store: SearchStore.store
+        store: SearchStore.store,
+        persoUsers: SearchStore.persoUsers
     },
     created: function () {
         this.store.performFullSearch();
     },
     components: {
-        'component-example': ComponentExample.Child
+        'personify-user': PersonifyUser.PersonifyUserComponent
     }
 });
