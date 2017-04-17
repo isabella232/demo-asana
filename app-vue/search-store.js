@@ -88,9 +88,12 @@ export const store = {
         store.state.tagResults = content.results[3].hits;
         store.state.teamResults = content.results[4].hits;
     },
-    async performFullSearch() {
+    triggerFullSearch() {
         this.state.fullQuery = this.state.query;
         this.state.query = "";
+        this.performFullSearch();
+    },
+    async performFullSearch() {
         try {
             const results = await fullIndex.search(this.state.fullQuery, {
                 hitsPerPage: 25,

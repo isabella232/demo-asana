@@ -349,7 +349,7 @@
                                                     <path d="M29.707,28.293l-8.256-8.256C23.042,18.13,24,15.677,24,13c0-6.075-4.925-11-11-11S2,6.925,2,13s4.925,11,11,11c2.677,0,5.13-0.958,7.037-2.549l8.256,8.256L29.707,28.293z M4,13c0-4.963,4.037-9,9-9c4.963,0,9,4.037,9,9s-4.037,9-9,9C8.037,22,4,17.963,4,13z"></path>
                                                 </svg><span class="typeahead multi-sectioned">                                   
                                             <input v-bind:value="local.query"
-  v-on:input="store.updateQuery($event.target.value)" v-on:keyup="$event.keyCode == 13 && store.performFullSearch()" autocomplete="off" rows="1" id="nav_search_input" tabindex="0" class="generic-input filter-input showing search-box" type="text" placeholder="Search">
+  v-on:input="store.updateQuery($event.target.value)" v-on:keyup="$event.keyCode == 13 && store.triggerFullSearch()" autocomplete="off" rows="1" id="nav_search_input" tabindex="0" class="generic-input filter-input showing search-box" type="text" placeholder="Search">
                                             </span>
                                                 <div v-bind:class="{'visible': local.query.length > 0}" class="dropdown typeahead-dropdown typeahead-new-section-style search-typeahead" style="top: 35px; max-height: 371px; position: absolute; z-index: 2000;">
                                                     <div id="nav_search_dropdown" class="typeahead-dropdown-contents" style="max-height: 371px; width: 509px;">
@@ -359,7 +359,7 @@
                                                                     <div class="search-accordion-context-text">Searching</div>
                                                                 </div>
                                                                 <div class="search-accordion-bellows">
-                                                                    <div id="nav_advanced_search_link" class="accordion-bellow preview search-accordion-bellow" v-on:click="store.performFullSearch()">
+                                                                    <div id="nav_advanced_search_link" class="accordion-bellow preview search-accordion-bellow" v-on:click="store.triggerFullSearch()">
                                                                         <div class="accordion-bellow-contents">
                                                                             <div class="action selectable clearfix " id="AsanaView/RemixTopbarView/NavigationSearchView/SearchView/TypeaheadView.nav_search/ListSectionsView.nav_search_list_sections_view(nav_advanced_search_link.perform_advanced_search)">
                                                                                 <div class="searchView-searchTasksAction">
@@ -393,7 +393,7 @@
                                                                                 <div class="item-icon">
                                                                                     <div class="photo-view photo-view-remix inbox-size photo-view-rounded-corners ">
                                                                                         <div class="react-mount-node photoView-reactMount">
-                                                                                            <div data-reactroot="" class="Avatar Avatar--medium Avatar--color0">
+                                                                                            <div class="Avatar Avatar--medium Avatar--color0" v-bind:style="{ background: user.hexCode }">
                                                                                                 <!-- react-text: 2 --><span>{{user.initials}}</span>
                                                                                                 <!-- /react-text -->
                                                                                             </div>
