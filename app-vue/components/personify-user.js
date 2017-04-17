@@ -11,7 +11,7 @@ export const PersonifyUserComponent = {
                         </svg>
                     </div>
                     <div class="dropdown-anchor omnibutton" v-on:click="toggleDropdown()">
-                        <a class="omnibutton-button">
+                        <a class="omnibutton-button" v-bind:style="{ background: hexCode || '' }">
                             <svg v-if="activeid === 0" class="icon PlusIcon omnibutton-plusIcon" title="PlusIcon" viewBox="0 0 32 32">
                                 <polygon points="28,14 18,14 18,4 14,4 14,14 4,14 4,18 14,18 14,28 18,28 18,18 28,18"></polygon>
                             </svg>
@@ -37,6 +37,9 @@ export const PersonifyUserComponent = {
     computed: {
         initials: function () {
             return this.getActiveUserInitials(this.users, this.activeid);
+        },
+        hexCode: function () {
+            return this.getActiveUserHexcode(this.users, this.activeid);
         }
     },
     methods: {
@@ -49,15 +52,24 @@ export const PersonifyUserComponent = {
         },
         getActiveUserInitials(users, id) {
             return _.flow(
-                this.findActiveUserName,
+                this.findActiveUser,
                 this.generateInitials
             )(users, id);
         },
-        findActiveUserName(users, id) {
-            return _.find(users, ['id', id]).name;
+        getActiveUserHexcode(users, id) {
+            return _.flow(
+                this.findActiveUser,
+                this.getHexCode
+            )(users, id);
         },
-        generateInitials(name) {
-            return name.split(" ").map(str => str.charAt(0)).slice(0, 2).join("");
+        findActiveUser(users, id) {
+            return _.find(users, ['id', id]);
+        },
+        getHexCode(user) {
+            return user ? user.hexCode : "";
+        },
+        generateInitials(user) {
+            return user.name.split(" ").map(str => str.charAt(0)).slice(0, 2).join("");
         }
     }
 }
