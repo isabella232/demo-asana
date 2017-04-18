@@ -1,7 +1,8 @@
 // ------------- GLOBAL OVERRIDES ------------- //
 [v-cloak] {
     opacity: 0;
-    .header-name & {
+    .header-name &,
+    &.dropTargetRow {
         display: none;
     }
 }
@@ -94,8 +95,22 @@
             width: 32px;
         }
     }
-    .omnibutton-button:hover {
-        text-decoration: none!important;
+    .omnibutton-button {
+        &:before {
+            content: "";
+            height: 24px;
+            width: 24px;
+            background-color: inherit;
+            border-radius: 12px;
+            position: absolute;
+            z-index: 0;
+        }
+        &:hover {
+            text-decoration: none!important;
+        }
+        .personify-user-initials {
+            z-index: 1;
+        }
     }
 }
 

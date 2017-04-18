@@ -1,6 +1,6 @@
 [v-cloak] {
   opacity: 0; }
-  .header-name [v-cloak] {
+  .header-name [v-cloak], [v-cloak].dropTargetRow {
     display: none; }
 
 .dropdown {
@@ -85,8 +85,20 @@
     height: 32px;
     width: 32px; }
 
+.personify-user .omnibutton-button:before {
+  content: "";
+  height: 24px;
+  width: 24px;
+  background-color: inherit;
+  border-radius: 12px;
+  position: absolute;
+  z-index: 0; }
+
 .personify-user .omnibutton-button:hover {
   text-decoration: none !important; }
+
+.personify-user .omnibutton-button .personify-user-initials {
+  z-index: 1; }
 
 .topbar-accountInfo {
   position: relative; }

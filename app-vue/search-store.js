@@ -10,19 +10,19 @@ export const fullIndex = client.initIndex('asanaTasksAndConversations');
 
 export const persoUsers = [
     {
-        name: "Kat Mooney",
+        name: "Kat Mooney (Marketing)",
         id: 8075699117009,
         hexCode: "#fd9a00"
     },
     {
-        name: "Tatiana Klima",
+        name: "Tatiana Klima (Engineering)",
         id: 8075908659758,
         hexCode: "#aa62e3"
     },
     {
-        name: "Blake Pham",
-        id: 8075375550288,
-        hexCode: "#fc91ad"
+        name: "Yevgeniya K (Recruiting)",
+        id: 8075699117004,
+        hexCode: "#7a6ff0"
     }
 ];
 
