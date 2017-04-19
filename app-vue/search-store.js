@@ -7,7 +7,6 @@ export const config = {
 }
 
 export const client = algoliasearch(config.APP_ID, config.API_KEY);
-export const fullIndex = client.initIndex('asanaTasksAndConversations');
 
 export const persoUsers = [
     {
@@ -30,6 +29,21 @@ export const persoUsers = [
     }
 ];
 
+export const sortOptions = [
+    {
+        index: "asanaTasksAndConversations",
+        name: "Most Relevant"
+    },
+    {
+        index: "asanaTasksAndConversations_creation",
+        name: "Creation Time"
+    },
+    {
+        index: "asanaTasksAndConversations_hearts",
+        name: "Hearts"
+    }
+]
+
 export const store = {
     state: {
         query: '',
@@ -41,7 +55,8 @@ export const store = {
         taskResults: [],
         tagResults: [],
         teamResults: [],
-        fullResults: []
+        fullResults: [],
+        activeSort: 'asanaTasksAndConversations'
     },
     updateQuery(value) {
         this.state.query = value;
@@ -67,7 +82,7 @@ export const store = {
             query: this.state.query,
             params: {
                 hitsPerPage: 8,
-                filters: this.createFilters(this.state.activeTeam, this.state.activePerso),
+                filters: this.createFilters(this.state.activeTeam),
                 optionalFacetFilters: ["assignee:" + this.state.activePerso + "<score=3>", "followers_du:" + this.state.activePerso + "<score=1>", "creator_du:" + this.state.activePerso + "<score=2>"]
             }
         }, {
@@ -104,6 +119,7 @@ export const store = {
         this.performSearch();
     },
     async performFullSearch() {
+        let fullIndex = client.initIndex(this.state.activeSort);
         try {
             const results = await fullIndex.search(this.state.fullQuery, {
                 hitsPerPage: 25,
@@ -121,6 +137,10 @@ export const store = {
     updatePerso(id) {
         this.state.activePerso = id;
         this.state.activeTeam = this.getActiveUserTeam(persoUsers, id);
+        this.performFullSearch();
+    },
+    updateSortIndex(index) {
+        this.state.activeSort = index;
         this.performFullSearch();
     },
     getActiveUserTeam(users, id) {

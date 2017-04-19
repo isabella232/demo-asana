@@ -660,7 +660,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="typeahead-nonscrolling-footer">
+                                                        <div class="typeahead-nonscrolling-footer" style="display: none;">
                                                             <div class="list-sections-view" id="nav_search_list_sections_view_footer">
                                                                 <div class="list-section" id="nav_advanced_search_footer">
                                                                     <div class="list-section-items">
@@ -740,14 +740,9 @@
                                                         <div id="center_pane__contents" class="column-contents2 ">
                                                             <div class="column-contents-on-click-below-content">
                                                                 <div class="gridPaneView">
-                                                                    <div class="toolbar main-bar search search-toolbar--tall tab-toolbar toolbar-no-grad" style="display: none;">
-                                                                        <div class="gutter-left"></div><span class="toolbar-section left"><a id="refine_search_button" class="refine-search-button">Refine Search</a></span><span class="toolbar-spacer"></span><span class="toolbar-section right"><a id="search_sort_menu" tabindex="-1" class="dropdown-menu-link  floatingSelectView-anchor "><span class="floatingSelectView-label"><span class="sort-button">Sort</span>
-                                                                        <svg class="svgIcon  svgIcon-dropdownarrow " viewBox="0 0 32 32" title="dropdownarrow">
-                                                                            <path d="M4.686,12.686l9.899,9.9c0.781,0.781,2.047,0.781,2.828,0l9.9-9.9l-2.475-2.475L16,19.05l-8.839-8.839L4.686,12.686z"></path>
-                                                                        </svg>
-                                                                        </span>
-                                                                        </a>
-                                                                        </span>
+                                                                    <div class="toolbar main-bar search search-toolbar--tall tab-toolbar toolbar-no-grad">
+                                                                        <div class="gutter-left"></div><span class="toolbar-section left" style="display: none;"><a id="refine_search_button" class="refine-search-button">Refine Search</a></span><span class="toolbar-spacer"></span>
+                                                                        <sort-dropdown :sorts="sortOptions" :activesort="local.activeSort"></sort-dropdown>
                                                                         <div class="gutter-right"></div>
                                                                     </div>
                                                                     <div class="grid-uncompact" style="padding-top: 10px;">
