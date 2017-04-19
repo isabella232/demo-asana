@@ -1,4 +1,5 @@
 import algoliasearch from 'algoliasearch';
+import _ from 'lodash';
 
 export const config = {
     APP_ID: 'latency',
@@ -12,17 +13,20 @@ export const persoUsers = [
     {
         name: "Kat Mooney (Marketing)",
         id: 8075699117009,
-        hexCode: "#fd9a00"
+        hexCode: "#fd9a00",
+        teamName: "Apollo Marketing Team"
     },
     {
         name: "Tatiana Klima (Engineering)",
         id: 8075908659758,
-        hexCode: "#aa62e3"
+        hexCode: "#aa62e3",
+        teamName: "Engineering"
     },
     {
         name: "Yevgeniya K (Recruiting)",
         id: 8075699117004,
-        hexCode: "#7a6ff0"
+        hexCode: "#7a6ff0",
+        teamName: "Recruiting"
     }
 ];
 
@@ -31,6 +35,7 @@ export const store = {
         query: '',
         fullQuery: '',
         activePerso: 0,
+        activeTeam: '',
         userResults: [],
         projectResults: [],
         taskResults: [],
@@ -62,6 +67,7 @@ export const store = {
             query: this.state.query,
             params: {
                 hitsPerPage: 8,
+                filters: this.createFilters(this.state.activeTeam, this.state.activePerso),
                 optionalFacetFilters: ["assignee:" + this.state.activePerso + "<score=3>", "followers_du:" + this.state.activePerso + "<score=1>", "creator_du:" + this.state.activePerso + "<score=2>"]
             }
         }, {
@@ -78,37 +84,55 @@ export const store = {
                 hitsPerPage: 8
             }
         }];
-        client.search(queries, this.searchCallback);
+        client.search(queries, this.searchCallback.bind(this));
     },
     searchCallback(err, content) {
         if (err) {
             console.error(err);
             return;
         }
-        store.state.userResults = content.results[0].hits;
-        store.state.projectResults = content.results[1].hits;
-        store.state.taskResults = content.results[2].hits;
-        store.state.tagResults = content.results[3].hits;
-        store.state.teamResults = content.results[4].hits;
+        this.state.userResults = content.results[0].hits;
+        this.state.projectResults = content.results[1].hits;
+        this.state.taskResults = content.results[2].hits;
+        this.state.tagResults = content.results[3].hits;
+        this.state.teamResults = content.results[4].hits;
     },
     triggerFullSearch() {
         this.state.fullQuery = this.state.query;
         this.state.query = "";
         this.performFullSearch();
+        this.performSearch();
     },
     async performFullSearch() {
         try {
             const results = await fullIndex.search(this.state.fullQuery, {
                 hitsPerPage: 25,
-                optionalFacetFilters: ["assignee:" + this.state.activePerso + "<score=3>", "followers_du:" + this.state.activePerso + "<score=1>", "creator_du:" + this.state.activePerso + "<score=2>"]
+                filters: this.createFilters(this.state.activeTeam, this.state.activePerso),
+                optionalFacetFilters: ["assignee:" + this.state.activePerso + "<score=3>", "teamName:" + this.state.activeTeam + "<score=2>", "followers_du:" + this.state.activePerso + "<score=1>", "creator_du:" + this.state.activePerso + "<score=1>"]
             });
             return this.state.fullResults = results.hits;
         } catch (err) {
             console.log(err);
         }
     },
+    createFilters(activeTeam, id) {
+        return activeTeam.length > 0 ? "visible:'public' OR teamName:'" + activeTeam + "'" : "visible:'public'";
+    },
     updatePerso(id) {
         this.state.activePerso = id;
+        this.state.activeTeam = this.getActiveUserTeam(persoUsers, id);
         this.performFullSearch();
+    },
+    getActiveUserTeam(users, id) {
+        return _.flow(
+            this.findActiveUser,
+            this.getTeamName
+        )(users, id);
+    },
+    findActiveUser(users, id) {
+        return _.find(users, ['id', id]);
+    },
+    getTeamName(user) {
+        return user ? user.teamName : "";
     }
 }
